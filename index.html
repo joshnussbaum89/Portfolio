@@ -21,59 +21,113 @@
     <link href="https://fonts.googleapis.com/css2?family=Outfit&display=swap" rel="stylesheet">
     <link rel="icon" href="/favicon.png" />
     <link rel="stylesheet" href="styles/styles.css">
-    <script src="js/index.js" type="module" defer></script>
+    <script src="js/main.js" defer></script>
     <title>Josh Nussbaum</title>
   </head>
   <body>
-    <!-- Hero -->
-    <header id="header" class="header">
-      <nav>
-        <h1 title="Josh Nussbaum"><a href="/">JN</a></h1>
-        <ul>
-          <li><a href="#work">Work</a></li>
-          <li><a href="#contact">Contact</a></li>
-        </ul>
-      </nav>
-      <section class="hero">
-        <img src="assets/headshot-blurred.webp" width="250" height="250" alt="Josh Nussbaum headshot">
-        <div class="info">
-          <h2>Hi, I'm Josh</h2>
-          <p>I'm a web developer and musician with a passion for creating and learning.</p>
-          <a href="#contact">Build stuff with me</a>
-        </div>
-      </section>
-      <a href="#services">
-        <div class="arrow"></div>
-      </a>
-    </header>
-
-    <!-- Services -->
-    <section id="services" class="services">
-      <h2>Services</h2>
-      <div class="service-cards">
-        <div class="card">
-          <span>01</span>
-          <h3>Design</h3>
-          <p>I make web designs that engage your audience and create the user experience you want.</p>
-        </div>
-        <div class="card">
-          <span>02</span>
-          <h3>Development</h3>
-          <p>Bringing visuals to life through developing highly functional web solutions.</p>
-        </div>
-        <div class="card">
-          <span>03</span>
-          <h3>The Full Package</h3>
-          <p>Get the best of both worlds for your website, capture your brand identity and get fully functional features.</p>
+    <div class="site-wrapper">
+      <!-- Hero -->
+      <header id="header" class="header">
+        <nav>
+          <h1 title="Josh Nussbaum"><a href="/">JN</a></h1>
+          <ul>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#work">Work</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </nav>
+        <section class="hero">
+          <img src="assets/headshot.webp" width="250" height="250" alt="Josh Nussbaum headshot">
+          <div class="info">
+            <h2>Hi, I'm Josh</h2>
+            <p>I'm a web developer and musician with a passion for creating and learning.</p>
+            <a href="#contact">Build stuff with me &#8594;</a>
+          </div>
+        </section>
+      </header>
+    
+      <!-- Scrolling Navigation -->
+      <div class="scrolling-navigation-container">
+        <div id="scrolling-navigation" class="scrolling-navigation">
+          <a class="dot active" href="#"></a>
+          <a class="dot" href="#services"></a>
+          <a class="dot" href="#work"></a>
+          <a class="dot" href="#contact"></a>
         </div>
       </div>
-    </section>
-
-    <!-- Work -->
-    <section id="work"></section>
-
-    <!-- Contact -->
-    <footer id="contact"></footer>
-
+      
+      <!-- Services -->
+      <section id="services" class="services">
+        <h2 class="section-header">Services</h2>
+        <div class="service-cards">
+          <div class="card">
+            <span>01</span>
+            <h3>Design</h3>
+            <p>I make web designs that engage your audience and create the user experience you want.</p>
+          </div>
+          <div class="card">
+            <span>02</span>
+            <h3>Development</h3>
+            <p>Bringing visuals to life through developing highly functional web solutions.</p>
+          </div>
+          <div class="card">
+            <span>03</span>
+            <h3>The Full Package</h3>
+            <p>Get the best of both worlds for your website, capture your brand identity and get fully functional features.</p>
+          </div>
+        </div>
+      </section>
+      
+      <!-- Work -->
+      <section id="work" class="work">
+        <h2 class="section-header">Recent <span>Work</span></h2>
+        <div class="work-content">
+          <div class="project">
+            <img src="./assets/supervoid.webp" width="3008" height="1720" alt="Supervoid TV" loading="lazy">
+            <div class="project-description">
+              <h3>Supervoid TV</h3>
+              <p>Website build for Supervoid TV, Philadelphia studio specializing in music videos, stage visuals, documentaries and more.</p>
+              <p><span>NextJS | React</span></p>
+              <a href="https://supervoid.tv" target="_blank" rel="noopener">Live site</a>
+              <a href="https://github.com/joshnussbaum89/supervoid-next" target="_blank" rel="noopener">Code</a>
+            </div>
+          </div>
+          <div class="project">
+            <img src="./assets/robby-webb.webp" width="3008" height="1720" alt="Robby Webb" loading="lazy">
+            <div class="project-description">
+              <h3>Robby Webb</h3>
+              <p>Website build for Robby Webb, Philadelphia producer, drummer and engineer.</p>
+              <p><span>React | Gatsby | Styled Components</span></p>
+              <a href="https://robbywebb.com" target="_blank" rel="noopener">Live site</a>
+              <a href="https://github.com/joshnussbaum89/robby-webb" target="_blank" rel="noopener">Code</a>
+            </div>
+          </div>
+          <div class="project">
+            <img src="./assets/tom-ford.webp" width="3008" height="1720" alt="Tom Ford Beauty" loading="lazy">
+            <div class="project-description">
+              <h3>Tom Ford Beauty</h3>
+              <p>Fragrance Finder for Tom Ford Beauty, built with my team while working at Wyng.</p>
+              <p><em>I do not own the rights to this code.</em></p>
+              <p><span>HTML5 | CSS3 | JavaScript | jQuery</span></p>
+              <a href="https://tomfordbeauty.wyng.com/fragrance-finder-global-master" target="_blank" rel="noopener">Live site</a>
+            </div>
+          </div>
+          <div class="project">
+            <img src="./assets/the-beer-barn.webp" width="3008" height="1720" alt="The Beer Barn Brewery" loading="lazy">
+            <div class="project-description">
+              <h3>The Beer Barn Brewery</h3>
+              <p>Template business landing page with an age gate (21+)</p>
+              <p><span>HTML5 | CSS3 | JavaScript</span></p>
+              <a href="https://teal-mermaid-89b056.netlify.app/" target="_blank" rel="noopener">Live site</a>
+              <a href="https://github.com/joshnussbaum89/beer-barn-brewery" target="_blank" rel="noopener">Code</a>
+            </div>
+          </div>
+        </div>
+      </section>
+      
+      <!-- Contact -->
+      <footer id="contact"></footer>
+    </div>
   </body>
 </html>
+  
