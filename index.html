@@ -126,7 +126,25 @@
       </section>
       
       <!-- Contact -->
-      <footer id="contact"></footer>
+      <footer id="contact" class="contact">
+        <div class="contact-container">
+          <h3 class="section-header">Contact <span>Me</span></h3>
+          <p>Have a project you&apos;d like to build? Let&apos;s talk ✨</p>
+          <form class="form">
+            <label htmlFor="name">Name: <span>*</span></label>
+            <input id="name" type="text" name="name" placeholder="John Doe" required>
+
+            <label htmlFor="email">Email: <span>*</span></label>
+            <input id="email" type="email" name="email" placeholder="JohnDoe@mail.com" required>
+            
+            <label htmlFor="message">Message: <span>*</span></label>
+            <textarea id="message" name="message" cols="30" rows="5" placeholder="Message..." required></textarea>
+            
+            <button type="submit">Submit</button>
+            <!-- TODO: handle successful submit -->
+          </form>
+        </div>
+      </footer>
     </div>
   </body>
 </html>
