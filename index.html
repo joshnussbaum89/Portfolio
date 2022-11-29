@@ -30,11 +30,20 @@
       <header id="header" class="header">
         <nav>
           <h1 title="Josh Nussbaum"><a href="/">JN</a></h1>
-          <ul>
-            <li><a href="#services">Services</a></li>
-            <li><a href="#work">Work</a></li>
-            <li><a href="#contact">Contact</a></li>
-          </ul>
+          <div class="desktop-nav">
+            <ul>
+              <li><a href="#services">Services</a></li>
+              <li><a href="#work">Work</a></li>
+              <li><a href="#contact">Contact</a></li>
+            </ul>
+          </div>
+          <div class="mobile-nav">
+            <div id="hamburger" class="hamburger">
+              <div class="top"></div>
+              <div class="middle"></div>
+              <div class="bottom"></div>
+            </div>
+          </div>
         </nav>
         <section class="hero">
           <img src="assets/headshot.webp" width="250" height="250" alt="Josh Nussbaum headshot">
@@ -130,7 +139,6 @@
         <div class="contact-container">
           <h3 class="section-header">Contact <span>Me</span></h3>
           <p>Have a project you&apos;d like to build? Let&apos;s talk ✨</p>
-          <!-- Form -->
           <form class="form">
             <label htmlFor="name">Name: <span>*</span></label>
             <input id="name" type="text" name="name" placeholder="John Doe" required>
@@ -145,4 +153,3 @@
     </div>
   </body>
 </html>
-  

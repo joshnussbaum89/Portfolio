@@ -14,8 +14,8 @@ let previousDotIndex = 0
 /**
  * Handle styling for 'active' navigation dot
  */
-function handleNavigationStyling(element = this) {
-  // Prevent calling onScroll event unnecessarily 
+function handleNavigationDotStyling(element = this) {
+  // Prevent removing/adding class unnecessarily 
   if (activeDotIndex !== previousDotIndex) {
     navigationDots.forEach((dot) => dot.classList.remove('active'))
     element.classList.add('active')
@@ -26,7 +26,7 @@ function handleNavigationStyling(element = this) {
 /**
  * Toggle active states for navigation dots
  */
-function handleActiveDots() {
+function handleActiveNavigationDots() {
   // DOM selectors
   const services = $('#services')
   const work     = $('#work')
@@ -44,11 +44,11 @@ function handleActiveDots() {
   if (contactTop < 100) activeDotIndex = 3
 
   // Handle styling
-  handleNavigationStyling($(`.dot[data-index="${activeDotIndex}"]`))
+  handleNavigationDotStyling($(`.dot[data-index="${activeDotIndex}"]`))
 }
 
 // Attach click handler to navigation dots
-navigationDots.forEach((dot) => dot.addEventListener('click', handleNavigationStyling))
+navigationDots.forEach((dot) => dot.addEventListener('click', handleNavigationDotStyling))
 
 // On scroll > handle active dots
-document.addEventListener('scroll', handleActiveDots)
+document.addEventListener('scroll', handleActiveNavigationDots)
