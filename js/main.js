@@ -2,6 +2,7 @@
   'use strict'
 
   // Global DOM selectors
+  const body           = document.querySelector('body')
   const hamburger      = document.getElementById('hamburger')
   const navigationDots = document.querySelectorAll('#scrolling-navigation .dot')
   const mobileNavItems = document.querySelectorAll('#mobile-nav a')
@@ -15,8 +16,6 @@
    * Toggle mobile navigation menu 'active' state onClick
    */
   function handleMobileNavigationOnClick() {
-    const body = document.querySelector('body')
-
     // Update state
     overlayDisplayed = !overlayDisplayed
     body.setAttribute('data-overlay-displayed', overlayDisplayed)
@@ -30,6 +29,11 @@
    */
   function handleMobileNavigationOnResize() {
     if (window.innerWidth >= 768) {
+      // Update state
+      overlayDisplayed = false
+      body.setAttribute('data-overlay-displayed', overlayDisplayed)      
+      
+      // Update styling
       hamburger.classList.remove('active')
     }
   }
