@@ -11,6 +11,7 @@
   /* Colors */
   --color-black: #1e1e1e;
   --color-white: #ffffff;
+  --color-white-transparent: #ffffffee;
   --color-grey: #b5b5b5;
   --color-light-grey: #d9d9d9;
   --color-dark-grey-transparent: #44444440;
@@ -46,11 +47,16 @@ body {
 }
 
 body {
+  background: var(--gradient-background);
   font-family: 'Outfit', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   letter-spacing: 1px;
-  background: var(--gradient-background);
+  overflow: auto;
+}
+
+body[data-overlay-displayed="true"] {
+  overflow: hidden;
 }
 
 .site-wrapper {
@@ -137,6 +143,7 @@ button {
 /* Header */
 
 .header {
+  position: relative;
   display: flex;
   flex-direction: column;
   gap: 4rem;
@@ -197,6 +204,8 @@ button {
   justify-content: center;
   align-items: center;
   width: 2rem;
+  height: 2rem;
+  z-index: 2;
   cursor: pointer;
 }
 
@@ -219,7 +228,7 @@ button {
 }
 
 .hamburger .middle {
-  width: 48px;
+  width: 42px;
   align-self: flex-end;
 }
 
@@ -238,6 +247,33 @@ button {
 
 .hamburger.active .bottom {
   transform: translateY(-2px) rotate(-45deg);
+}
+
+.mobile-nav-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  padding-top: 170px;
+  opacity: 0;
+  visibility: hidden;
+  background-color: var(--color-white-transparent);
+  transition: var(--transition-normal);
+  box-shadow: var(--box-shadow-light);
+  border-radius: 1rem;
+}
+
+.hamburger.active + .mobile-nav-overlay {
+  opacity: 1;
+  visibility: visible;
+  z-index: 1;
+}
+
+.mobile-nav li {
+  font-size: var(--size-extra-large);
+  margin-bottom: 2rem;
+  text-align: center;
 }
 
 .desktop-nav {
@@ -268,7 +304,7 @@ button {
   }
 }
 
-.hero {
+.header-info {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -279,7 +315,7 @@ button {
 }
 
 @media (min-width: 768px) {
-  .hero {
+  .header-info {
     flex-direction: row-reverse;
     justify-content: center;
     gap: 2vw;
@@ -288,7 +324,7 @@ button {
   }
 }
 
-.hero img {
+.header-info img {
   width: 50vw;
   height: 100%;
   max-width: 250px;

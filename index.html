@@ -24,28 +24,35 @@
     <script src="js/main.js" defer></script>
     <title>Josh Nussbaum</title>
   </head>
-  <body>
+  <body data-overlay-displayed="false">
     <div class="site-wrapper">
       <!-- Hero -->
       <header id="header" class="header">
         <nav>
           <h1 title="Josh Nussbaum"><a href="/">JN</a></h1>
-          <div class="desktop-nav">
+          <div id="desktop-nav" class="desktop-nav">
             <ul>
               <li><a href="#services">Services</a></li>
               <li><a href="#work">Work</a></li>
               <li><a href="#contact">Contact</a></li>
             </ul>
           </div>
-          <div class="mobile-nav">
+          <div id="mobile-nav" class="mobile-nav">
             <div id="hamburger" class="hamburger">
               <div class="top"></div>
               <div class="middle"></div>
               <div class="bottom"></div>
             </div>
+            <div class="mobile-nav-overlay">
+              <ul>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#work">Work</a></li>
+                <li><a href="#contact">Contact</a></li>
+              </ul>
+            </div>
           </div>
         </nav>
-        <section class="hero">
+        <section class="header-info">
           <img src="assets/headshot.webp" width="250" height="250" alt="Josh Nussbaum headshot">
           <div class="info">
             <h2>Hi, I'm Josh</h2>
