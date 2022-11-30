@@ -13,6 +13,13 @@
   let overlayDisplayed = false
 
   /**
+   * Set footer Date and text
+   */
+  function setFooterDateAndText() {
+    document.getElementById('footer').innerHTML = `joshnussbaum.io © ${new Date().getFullYear()}`
+  }
+
+  /**
    * Toggle mobile navigation menu 'active' state onClick
    */
   function handleMobileNavigationOnClick() {
@@ -74,20 +81,26 @@
     handleActiveNavigationDotStyling(document.querySelector(`.dot[data-index="${activeDotIndex}"]`))
   }
 
-  // On Click > toggle 'active' mobile navigation
-  hamburger.addEventListener('click', handleMobileNavigationOnClick)
+  // Initialize app
+  function init() {
+    setFooterDateAndText()
 
-  // On Resize > reset 'active' mobile navigation
-  window.addEventListener('resize', handleMobileNavigationOnResize)
-
-  // 1. Attach click handler to mobile navigation items
-  // 2. On Click > toggle 'active' mobile navigation
-  mobileNavItems.forEach((item) => item.addEventListener('click', handleMobileNavigationOnClick))
-
-  // 1. Attach click handler to navigation dots  
-  // 2. On Click > handle 'active' dots 
-  navigationDots.forEach((dot) => dot.addEventListener('click', handleActiveNavigationDotStyling))
-
-  // On Scroll > handle 'active' dots 
-  document.addEventListener('scroll', handleActiveNavigationDotsOnScroll)
+    // On Click > toggle 'active' mobile navigation
+    hamburger.addEventListener('click', handleMobileNavigationOnClick)
+    
+    // On Resize > reset 'active' mobile navigation
+    window.addEventListener('resize', handleMobileNavigationOnResize)
+    
+    // 1. Attach click handler to mobile navigation items
+    // 2. On Click > toggle 'active' mobile navigation
+    mobileNavItems.forEach((item) => item.addEventListener('click', handleMobileNavigationOnClick))
+    
+    // 1. Attach click handler to navigation dots  
+    // 2. On Click > handle 'active' dots 
+    navigationDots.forEach((dot) => dot.addEventListener('click', handleActiveNavigationDotStyling))
+    
+    // On Scroll > handle 'active' dots 
+    document.addEventListener('scroll', handleActiveNavigationDotsOnScroll)
+  }
+  init()
 })()

@@ -574,10 +574,6 @@ button {
 
 /* Contact */
 
-.contact {
-  padding-bottom: 8rem;
-}
-
 .contact-container {
   width: 100%;
   max-width: 650px;
@@ -603,6 +599,7 @@ button {
 .form {
   display: flex;
   flex-direction: column;
+  margin-bottom: 8rem;
   font-size: var(--size-small);
 }
 
@@ -651,6 +648,12 @@ button {
     color: var(--color-black);
     background-color: var(--color-white);
   }
+}
+
+.footer {
+  text-align: center;
+  font-size: var(--size-extra-small);
+  color: var(--color-grey);
 }
 
 /* Animations */
