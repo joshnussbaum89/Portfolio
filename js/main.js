@@ -83,7 +83,12 @@
 
   // Initialize app
   function init() {
-    setFooterDateAndText()
+    if (!window.location.href.includes('success')) {
+      setFooterDateAndText()
+
+      // On Scroll > handle 'active' dots 
+      document.addEventListener('scroll', handleActiveNavigationDotsOnScroll)
+    }
 
     // On Click > toggle 'active' mobile navigation
     hamburger.addEventListener('click', handleMobileNavigationOnClick)
@@ -98,9 +103,6 @@
     // 1. Attach click handler to navigation dots  
     // 2. On Click > handle 'active' dots 
     navigationDots.forEach((dot) => dot.addEventListener('click', handleActiveNavigationDotStyling))
-    
-    // On Scroll > handle 'active' dots 
-    document.addEventListener('scroll', handleActiveNavigationDotsOnScroll)
   }
   init()
 })()
