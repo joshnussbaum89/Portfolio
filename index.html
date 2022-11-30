@@ -24,7 +24,7 @@
     <script src="js/main.js" defer></script>
     <title>Josh Nussbaum</title>
   </head>
-  <body data-overlay-displayed="false">
+  <body data-page="home" data-overlay-displayed="false">
     <div class="site-wrapper">
       <!-- Hero -->
       <header id="header" class="header">
@@ -146,7 +146,7 @@
         <div class="contact-container">
           <h3 class="section-header">Contact <span>Me</span></h3>
           <p>Have a project you'd like to build? Let's talk ✨</p>
-          <form class="form">
+          <form method="POST" class="form" name="contactForm" action="/success.html" data-netlify="true">
             <label htmlFor="name">Name: <span>*</span></label>
             <input id="name" type="text" name="name" placeholder="John Doe" required>
             <label htmlFor="email">Email: <span>*</span></label>

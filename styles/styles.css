@@ -55,7 +55,7 @@ body {
   overflow: auto;
 }
 
-body[data-overlay-displayed="true"] {
+body[data-overlay-displayed='true'] {
   overflow: hidden;
 }
 
@@ -74,6 +74,10 @@ body[data-overlay-displayed="true"] {
   .site-wrapper {
     margin: 2rem auto;
   }
+}
+
+[data-page='success'] .site-wrapper {
+  min-height: 100vh;
 }
 
 h1,
@@ -324,6 +328,10 @@ button {
   }
 }
 
+[data-page='success'] .header-info {
+  text-align: center;
+}
+
 .header-info img {
   width: 50vw;
   height: 100%;
@@ -356,6 +364,11 @@ button {
     margin: 0 0 1rem;
     font-size: var(--size-medium);
   }
+}
+
+[data-page='success'] .info p {
+  width: initial;
+  max-width: none;
 }
 
 .info a {
@@ -650,7 +663,7 @@ button {
   }
 }
 
-.footer {
+.footer p {
   text-align: center;
   font-size: var(--size-extra-small);
   color: var(--color-grey);

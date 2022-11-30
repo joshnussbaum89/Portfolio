@@ -16,7 +16,7 @@
    * Set footer Date and text
    */
   function setFooterDateAndText() {
-    document.getElementById('footer').innerHTML = `joshnussbaum.io © ${new Date().getFullYear()}`
+    document.querySelector('#footer p').innerHTML = `joshnussbaum.io © ${new Date().getFullYear()}`
   }
 
   /**
