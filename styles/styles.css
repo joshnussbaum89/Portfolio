@@ -416,6 +416,7 @@ button {
 
 .social-icons svg {
   width: 1.5rem;
+  fill: var(--color-black);
 }
 
 @media (min-width: 768px) {
