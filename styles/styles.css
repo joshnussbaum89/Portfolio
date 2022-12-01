@@ -169,7 +169,7 @@ button {
   position: relative;
   display: flex;
   flex-direction: column;
-  gap: 4rem;
+  gap: 3rem;
 }
 
 @media (min-width: 768px) {
