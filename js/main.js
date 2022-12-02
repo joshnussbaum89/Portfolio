@@ -47,6 +47,7 @@
 
   /**
    * Handle styling for 'active' navigation dot
+   * @param {object | HTMLElement} element 
    */
   function handleActiveNavigationDotStyling(element = this) {
     // Prevent removing/adding class unnecessarily 
