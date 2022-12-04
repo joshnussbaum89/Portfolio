@@ -1,109 +1,25 @@
-(() => {
-  'use strict'
+import { hamburger, mobileNavItems } from './modules/selectors.js'
+import { setFooterDateAndText } from './modules/setDate.js'
+import { handleActiveNavigationDotsOnScroll } from './modules/dots.js'
+import { handleMobileNavigationOnClick, handleMobileNavigationOnResize } from './modules/menu.js'
 
-  // Global DOM selectors
-  const body           = document.querySelector('body')
-  const hamburger      = document.getElementById('hamburger')
-  const navigationDots = document.querySelectorAll('#scrolling-navigation .dot')
-  const mobileNavItems = document.querySelectorAll('#mobile-nav a')
+// Initialize app
+function init() {
+  if (!window.location.href.includes('success')) {
+    setFooterDateAndText()
 
-  // State
-  let activeDotIndex   = 0
-  let previousDotIndex = 0
-  let overlayDisplayed = false
-
-  /**
-   * Set footer Date and text
-   */
-  function setFooterDateAndText() {
-    document.querySelector('#footer p').innerHTML = `joshnussbaum.io © ${new Date().getFullYear()}`
+    // On Scroll > handle 'active' dots
+    document.addEventListener('scroll', handleActiveNavigationDotsOnScroll)
   }
 
-  /**
-   * Toggle mobile navigation menu 'active' state onClick
-   */
-  function handleMobileNavigationOnClick() {
-    // Update state
-    overlayDisplayed = !overlayDisplayed
-    body.setAttribute('data-overlay-displayed', overlayDisplayed)
+  // On Click > toggle 'active' mobile navigation
+  hamburger.addEventListener('click', handleMobileNavigationOnClick)
 
-    // Update styling
-    hamburger.classList.toggle('active')
-  }
+  // On Resize > reset 'active' mobile navigation
+  window.addEventListener('resize', handleMobileNavigationOnResize)
 
-  /**
-   * Reset mobile navigation menu 'active' state on desktop
-   */
-  function handleMobileNavigationOnResize() {
-    if (window.innerWidth >= 768) {
-      // Update state
-      overlayDisplayed = false
-      body.setAttribute('data-overlay-displayed', overlayDisplayed)      
-      
-      // Update styling
-      hamburger.classList.remove('active')
-    }
-  }
-
-  /**
-   * Handle styling for 'active' navigation dot
-   * @param {object | HTMLElement} element 
-   */
-  function handleActiveNavigationDotStyling(element = this) {
-    // Prevent removing/adding class unnecessarily 
-    if (activeDotIndex !== previousDotIndex) {
-      navigationDots.forEach((dot) => dot.classList.remove('active'))
-      element.classList.add('active')
-      previousDotIndex = activeDotIndex
-    }
-  }
-
-  /**
-   * Toggle active states for navigation dots
-   */
-  function handleActiveNavigationDotsOnScroll() {
-    // DOM selectors
-    const services = document.getElementById('services')
-    const work     = document.getElementById('work')
-    const contact  = document.getElementById('contact')
-
-    // Section locations
-    const servicesTop = services.getBoundingClientRect().top
-    const workTop     = work.getBoundingClientRect().top
-    const contactTop  = contact.getBoundingClientRect().top
-    
-    // Set active dot index
-    if (servicesTop > 0)                  activeDotIndex = 0 // Home
-    if (servicesTop < 100 && workTop > 0) activeDotIndex = 1 // Services
-    if (workTop < 100 && contactTop > 0)  activeDotIndex = 2 // Work
-    if (contactTop < 100)                 activeDotIndex = 3 // Contact
-
-    // Handle styling
-    handleActiveNavigationDotStyling(document.querySelector(`.dot[data-index="${activeDotIndex}"]`))
-  }
-
-  // Initialize app
-  function init() {
-    if (!window.location.href.includes('success')) {
-      setFooterDateAndText()
-
-      // On Scroll > handle 'active' dots 
-      document.addEventListener('scroll', handleActiveNavigationDotsOnScroll)
-    }
-
-    // On Click > toggle 'active' mobile navigation
-    hamburger.addEventListener('click', handleMobileNavigationOnClick)
-    
-    // On Resize > reset 'active' mobile navigation
-    window.addEventListener('resize', handleMobileNavigationOnResize)
-    
-    // 1. Attach click handler to mobile navigation items
-    // 2. On Click > toggle 'active' mobile navigation
-    mobileNavItems.forEach((item) => item.addEventListener('click', handleMobileNavigationOnClick))
-    
-    // 1. Attach click handler to navigation dots  
-    // 2. On Click > handle 'active' dots 
-    navigationDots.forEach((dot) => dot.addEventListener('click', handleActiveNavigationDotStyling))
-  }
-  init()
-})()
+  // 1. Attach click handler to mobile navigation items
+  // 2. On Click > toggle 'active' mobile navigation
+  mobileNavItems.forEach((item) => item.addEventListener('click', handleMobileNavigationOnClick))
+}
+init()
