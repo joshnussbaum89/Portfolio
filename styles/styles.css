@@ -33,6 +33,7 @@
 
   /* Transitions */
   --transition-normal: all 0.3s ease-in-out;
+  --transition-fade: opacity 0.6s ease-in-out;
 }
 
 * {
@@ -429,7 +430,7 @@ button {
 
 .social-icons svg {
   display: block;
-  width: 1.5rem;
+  width: 1.7rem;
   fill: var(--color-black);
 }
 
@@ -440,7 +441,7 @@ button {
 }
 
 .social-icons a:first-of-type svg {
-  width: 1.4rem;
+  width: 1.6rem;
 }
 
 @media (min-width: 768px) {
@@ -503,10 +504,56 @@ button {
   box-shadow: var(--box-shadow-light);
 }
 
+.work-header {
+  margin-bottom: 2.5rem;
+}
+
+@media (min-width: 768px) {
+  .work-header {
+    margin-bottom: 4rem;
+    text-align: center;
+  }
+}
+
+.work-header h2 {
+  font-size: var(--size-large);
+}
+
+@media (min-width: 768px) {
+  .work-header h2 {
+    font-size: var(--size-extra-large);
+  }
+}
+
+.tags .josh-cta {
+  margin: 0.5rem 0.5rem 0 0;
+  font-size: var(--size-small);
+  color: var(--color-black);
+  background-color: transparent;
+  transition: var(--transition-normal);
+}
+
+.tags .josh-cta.active {
+  color: var(--color-white);
+  background-color: var(--color-black);
+}
+
 .work-content {
   display: grid;
   grid-template-columns: 1fr;
   gap: 4rem;
+
+  /* fade animation */
+  height: 0;
+  opacity: 0;
+  overflow: auto;
+  transition: var(--transition-fade);
+}
+
+.work-content.active {
+  /* fade animation */
+  height: auto;
+  opacity: 1;
 }
 
 @media (min-width: 768px) {
