@@ -232,7 +232,7 @@ button {
   align-items: center;
   width: 2rem;
   height: 2rem;
-  z-index: 2;
+  z-index: 3;
   cursor: pointer;
 }
 
@@ -296,7 +296,7 @@ button {
 .hamburger.active + .mobile-nav-overlay {
   opacity: 1;
   visibility: visible;
-  z-index: 1;
+  z-index: 2;
 }
 
 .mobile-nav li {
