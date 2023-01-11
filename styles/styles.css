@@ -578,43 +578,13 @@ button {
   }
 }
 
-.project-image-container {
-  height: 375px;
+.project img {
   width: 100%;
-  background-size: cover;
-  background-position: center;
+  height: auto;
   margin-bottom: 1rem;
   border: 2px solid var(--color-black);
   border-radius: 10px;
   box-shadow: var(--box-shadow-light);
-}
-
-.project-image-container[data-project-title='Supervoid'] {
-  background-image: url('../assets/supervoid.webp');
-}
-
-.project-image-container[data-project-title='Robby Webb'] {
-  background-image: url('../assets/robby-webb.webp');
-}
-
-.project-image-container[data-project-title='Tom Ford'] {
-  background-image: url('../assets/tom-ford.webp');
-}
-
-.project-image-container[data-project-title='Together Forward'] {
-  background-image: url('../assets/together-forward.webp');
-}
-
-.project-image-container[data-project-title='Rover Rover, Peace Drink'] {
-  background-image: url('../assets/rover-rover.webp');
-}
-
-.project-image-container[data-project-title='Josh Nussbaum, What Already Is'] {
-  background-image: url('../assets/what-already-is.webp');
-}
-
-.project-image-container[data-project-title='Josh Nussbaum, Live At The Hangar'] {
-  background-image: url('../assets/live-at-the-hangar.webp');
 }
 
 .project-description {
