@@ -2,7 +2,6 @@ import { hamburger, mobileNavItems, projectTags } from './modules/selectors.js'
 import { setFooterDateAndText } from './modules/setDate.js'
 import { handleActiveNavigationDotsOnScroll } from './modules/dots.js'
 import { handleMobileNavigationOnClick, handleMobileNavigationOnResize } from './modules/menu.js'
-import { toggleVisibleProjects } from './modules/projects.js'
 
 // Initialize app
 function init() {
@@ -15,9 +14,6 @@ function init() {
   
   // On Resize > reset 'active' mobile navigation
   window.addEventListener('resize', handleMobileNavigationOnResize)
-  
-  // On Click > toggle 'active' projects
-  projectTags.forEach((tag) => tag.addEventListener('click', toggleVisibleProjects))
   
   // 1. Attach click handler to mobile navigation items
   // 2. On Click > toggle 'active' mobile navigation

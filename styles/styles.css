@@ -515,12 +515,12 @@ button {
 /* Work */
 
 .work-header {
-  margin-bottom: 2.5rem;
+  margin-bottom: 1rem;
 }
 
 @media (min-width: 768px) {
   .work-header {
-    margin-bottom: 4rem;
+    margin-bottom: 2rem;
     text-align: center;
   }
 }
@@ -553,18 +553,7 @@ button {
   display: grid;
   grid-template-columns: 1fr;
   gap: 4rem;
-
-  /* fade animation */
-  height: 0;
-  opacity: 0;
-  overflow: auto;
   transition: var(--transition-fade);
-}
-
-.work-content.active {
-  /* fade animation */
-  height: auto;
-  opacity: 1;
 }
 
 @media (min-width: 768px) {
