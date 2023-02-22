@@ -1,4 +1,3 @@
-// vite.config.js
 import { resolve } from 'path'
 import { defineConfig } from 'vite'
 
@@ -7,7 +6,9 @@ export default defineConfig({
     rollupOptions: {
       input: {
         main: resolve(__dirname, 'index.html'),
-        nested: resolve(__dirname, 'success.html'),
+        sucess: resolve(__dirname, 'success.html'),
+        blog: resolve(__dirname, 'blog/index.html'),
+        post: resolve(__dirname, 'blog/sample-post.html'),
       },
     },
   },
