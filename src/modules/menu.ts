@@ -9,10 +9,10 @@ let overlayDisplayed = false
 function handleMobileNavigationOnClick() {
   // Update state
   overlayDisplayed = !overlayDisplayed
-  body.setAttribute('data-overlay-displayed', overlayDisplayed)
+  body!.setAttribute('data-overlay-displayed', `${overlayDisplayed}`)
 
   // Update styling
-  hamburger.classList.toggle('active')
+  hamburger!.classList.toggle('active')
 }
 
 /**
@@ -22,10 +22,10 @@ function handleMobileNavigationOnResize() {
   if (window.innerWidth >= 768) {
     // Update state
     overlayDisplayed = false
-    body.setAttribute('data-overlay-displayed', overlayDisplayed)
+    body!.setAttribute('data-overlay-displayed', `${overlayDisplayed}`)
 
     // Update styling
-    hamburger.classList.remove('active')
+    hamburger!.classList.remove('active')
   }
 }
 
