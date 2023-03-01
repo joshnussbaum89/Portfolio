@@ -1,0 +1,120 @@
+---
+import SectionHeader from '../Global/SectionHeader.astro'
+---
+
+<section id="contact" class="contact">
+  <div class="contact-container">
+    <SectionHeader text="Contact Me" />
+    <p>Have something you are looking to build? Let's make it!</p>
+    <form
+      method="POST"
+      class="form"
+      name="contactForm"
+      action="/success.html"
+      data-netlify="true"
+    >
+      <label>Name: <span>*</span></label>
+      <input id="name" type="text" name="name" placeholder="Name" required />
+      <label>Email: <span>*</span></label>
+      <input
+        id="email"
+        type="email"
+        name="email"
+        placeholder="Email"
+        required
+      />
+      <label>Message: <span>*</span></label>
+      <textarea
+        id="message"
+        name="message"
+        cols="30"
+        rows="5"
+        placeholder="Write your message"
+        required></textarea>
+      <button class="josh-cta" type="submit">Submit</button>
+    </form>
+  </div>
+</section>
+
+<style>
+  .contact-container {
+    width: 100%;
+    max-width: 650px;
+    margin: auto;
+  }
+
+  @media (min-width: 768px) {
+    .contact-container h2,
+    .contact-container > p {
+      text-align: center;
+    }
+  }
+
+  .contact-container h2 {
+    margin-bottom: 1rem;
+  }
+
+  .contact-container > p {
+    display: block;
+    max-width: 410px;
+    margin-bottom: 2rem;
+    font-size: var(--size-small);
+  }
+
+  @media (min-width: 768px) {
+    .contact-container > p {
+      max-width: 480px;
+      margin-left: auto;
+      margin-right: auto;
+      font-size: var(--size-medium);
+    }
+  }
+
+  .form {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 7rem;
+    font-size: var(--size-small);
+  }
+
+  @media (min-width: 768px) {
+    .form {
+      margin-bottom: 6rem;
+    }
+  }
+
+  .form label,
+  .form input,
+  .form textarea,
+  .form button {
+    font-size: var(--size-small);
+    border-radius: 5px;
+  }
+
+  .form label {
+    margin-bottom: 0.25rem;
+  }
+
+  .form label span {
+    color: var(--color-red);
+  }
+
+  .form input,
+  .form textarea {
+    margin-bottom: 1rem;
+    padding: 0.5rem;
+    border: 2px solid var(--color-black);
+    background: var(--color-white);
+  }
+
+  .form input::placeholder,
+  .form textarea::placeholder {
+    color: var(--color-grey-text);
+  }
+
+  .form button {
+    min-width: 50%;
+    margin: 0 auto 1rem;
+    padding: 1rem;
+  }
+</style>

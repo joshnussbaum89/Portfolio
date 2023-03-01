@@ -1,0 +1,60 @@
+---
+// Components
+import SectionHeader from '../Global/SectionHeader.astro'
+import Project from './Project.astro'
+
+import supervoidImage from '/supervoid.webp'
+import robbyWebbImage from '/robby-webb.webp'
+
+const projectData = [
+  {
+    title: 'Supervoid TV',
+    description:
+      'Website build for Supervoid TV, Philadelphia studio specializing in music videos, stage visuals, documentaries and more.',
+    imageSrc: supervoidImage,
+    alt: 'Supervoid TV website screenshot with a black background and white text',
+    languages: 'React | NextJS',
+    liveSite: 'https://supervoid.tv',
+    github: 'https://github.com/joshnussbaum89/supervoid-next',
+  },
+  {
+    title: 'Robby Webb',
+    description:
+      'Website build for Robby Webb, Philadelphia producer, drummer and engineer.',
+    imageSrc: robbyWebbImage,
+    alt: 'Robby Webb website screenshot with a black background and white text',
+    languages: 'React | NextJS | Styled Components',
+    liveSite: 'https://robbywebb.com',
+    github: 'https://github.com/joshnussbaum89/robby-webb',
+  },
+]
+---
+
+<section id="work">
+  <SectionHeader text="Recent Work" />
+  <div class="work-content">
+    {projectData.map((project) => <Project project={project} />)}
+  </div>
+</section>
+
+<style>
+  .work-content {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 4rem;
+    transition: var(--transition-fade);
+  }
+
+  @media (min-width: 768px) {
+    .work-content {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 4rem 2rem;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .work-content {
+      gap: 6rem 4rem;
+    }
+  }
+</style>

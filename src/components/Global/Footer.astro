@@ -1,0 +1,93 @@
+---
+// Company logos
+import aaa from '/aaa.svg'
+import pmi from '/pmi.svg'
+import tomFord from '/tom-ford.svg'
+import loreal from '/loreal.svg'
+import laRochePosay from '/la-roche-posay.svg'
+import churchDwight from '/church-dwight.svg'
+
+const logoData = [
+  {
+    src: aaa,
+    alt: 'AAA Logo',
+  },
+  {
+    src: pmi,
+    alt: 'PMI Logo',
+  },
+  {
+    src: tomFord,
+    alt: 'Tom Ford Logo',
+  },
+  {
+    src: loreal,
+    alt: "L'Oreal Logo",
+  },
+  {
+    src: laRochePosay,
+    alt: 'La Roche Posay Logo',
+  },
+  {
+    src: churchDwight,
+    alt: 'Church & Dwight Logo',
+  },
+]
+---
+
+<footer id="footer" class="footer">
+  <div class="client-logos">
+    {
+      logoData.map((logo) => (
+        <div class="logo">
+          <img src={logo.src} alt={logo.alt} />
+        </div>
+      ))
+    }
+  </div>
+  <p id="copyright"></p>
+</footer>
+
+<style>
+  .client-logos {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+    padding: 1rem 0;
+  }
+
+  .client-logos .logo {
+    width: 8rem;
+    height: 4rem;
+    padding: 0.5rem;
+  }
+
+  .client-logos img {
+    width: 100%;
+    height: 100%;
+  }
+
+  .footer p {
+    text-align: center;
+    font-size: var(--size-extra-small);
+    color: var(--color-grey-text);
+    padding-bottom: 1rem;
+  }
+
+  @media (min-width: 768px) {
+    .footer p {
+      padding-bottom: 2rem;
+    }
+  }
+</style>
+
+<script>
+  function setFooterCopyrightText() {
+    const footerText = `joshnussbaum.io © ${new Date().getFullYear()}`
+    document.querySelector('#copyright').innerHTML = footerText
+  }
+  setFooterCopyrightText()
+</script>

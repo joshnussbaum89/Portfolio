@@ -1,0 +1,66 @@
+---
+import JoshCta from '../components/Global/JoshCta.astro'
+import Navigation from '../components/Global/Navigation.astro'
+import SectionHeader from '../components/Global/SectionHeader.astro'
+import Layout from '../layouts/Layout.astro'
+---
+
+<Layout
+  title="Josh Nussbaum | Success"
+  description="Successful form submit"
+  url="https://joshnussbaum.io/success"
+>
+  <header id="header" class="header">
+    <Navigation />
+    <section class="header-info">
+      <div class="info">
+        <SectionHeader text="Thank you!" />
+        <p>Your form submission has been received.</p>
+        <JoshCta text="← Back to site" href="/" />
+      </div>
+    </section>
+  </header>
+</Layout>
+
+<style>
+  .header {
+    min-height: 75vh;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 6rem;
+  }
+
+  .header-info {
+    padding: 1rem;
+    text-align: center;
+  }
+
+  @media (min-width: 768px) {
+    .header-info {
+      padding: 2rem;
+    }
+  }
+
+  .info p {
+    margin: 0 auto 1rem;
+    font-size: var(--size-small);
+    font-weight: var(--weight-bold);
+  }
+
+  @media (min-width: 768px) {
+    .info p {
+      font-size: var(--size-medium);
+    }
+  }
+  .info h2 {
+    margin-bottom: 1rem;
+    font-size: var(--size-large);
+  }
+
+  @media (min-width: 768px) {
+    .info h2 {
+      font-size: var(--size-extra-large);
+    }
+  }
+</style>

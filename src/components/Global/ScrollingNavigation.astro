@@ -1,0 +1,94 @@
+<div class="scrolling-navigation-container">
+  <div id="scrolling-navigation" class="scrolling-navigation">
+    <a class="dot active" href="#" data-index="0"></a>
+    <a class="dot" href="#services" data-index="1"></a>
+    <a class="dot" href="#work" data-index="2"></a>
+    <a class="dot" href="#contact" data-index="3"></a>
+  </div>
+</div>
+
+<style>
+  .scrolling-navigation-container {
+    position: fixed;
+    right: 2.5%;
+    bottom: 1rem;
+    padding: 1rem;
+    z-index: 1;
+  }
+
+  @media (min-width: 768px) {
+    .scrolling-navigation-container {
+      bottom: 4rem;
+      padding: 0 2rem;
+    }
+  }
+
+  @media (min-width: 1517px) {
+    .scrolling-navigation-container {
+      right: calc(50% - 45rem);
+    }
+  }
+
+  .scrolling-navigation {
+    width: 20px;
+  }
+
+  .scrolling-navigation .dot {
+    display: block;
+    height: 20px;
+    width: 100%;
+    background-color: var(--color-white);
+    border: 2px solid var(--color-black);
+    border-radius: 50%;
+    transition: var(--transition-normal);
+    cursor: pointer;
+  }
+
+  .scrolling-navigation .dot:not(:last-child) {
+    margin-bottom: 1rem;
+  }
+
+  .scrolling-navigation .dot.active {
+    background-color: var(--color-green);
+  }
+</style>
+
+<script>
+  const navigationDots = document.querySelectorAll('#scrolling-navigation .dot')
+  let activeDotIndex = 0
+  let previousDotIndex = 0
+
+  function handleActiveNavigationDotStyling(element = this) {
+    // Prevent removing/adding class unnecessarily
+    if (activeDotIndex !== previousDotIndex) {
+      navigationDots.forEach((dot) => dot.classList.remove('active'))
+      element.classList.add('active')
+      previousDotIndex = activeDotIndex
+    }
+  }
+
+  function handleActiveNavigationDotsOnScroll() {
+    const services = document.getElementById('services')
+    const work = document.getElementById('work')
+    const contact = document.getElementById('contact')
+
+    // Get the top position of each section
+    const servicesTop = services.getBoundingClientRect().top
+    const workTop = work.getBoundingClientRect().top
+    const contactTop = contact.getBoundingClientRect().top
+
+    if (servicesTop > 0) activeDotIndex = 0 // Home
+    if (servicesTop < 100 && workTop > 0) activeDotIndex = 1 // Services
+    if (workTop < 100 && contactTop > 0) activeDotIndex = 2 // Work
+    if (contactTop < 100) activeDotIndex = 3 // Contact
+
+    handleActiveNavigationDotStyling(
+      document.querySelector(`.dot[data-index="${activeDotIndex}"]`)
+    )
+  }
+
+  document.addEventListener('scroll', handleActiveNavigationDotsOnScroll)
+  navigationDots.forEach((dot) =>
+    dot.addEventListener('click', handleActiveNavigationDotStyling)
+  )
+</script>

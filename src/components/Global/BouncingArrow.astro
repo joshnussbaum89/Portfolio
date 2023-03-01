@@ -1,0 +1,19 @@
+<div class="arrow"></div>
+
+<style>
+  .arrow {
+    display: none;
+  }
+
+  @media (min-width: 768px) {
+    .arrow {
+      display: block;
+      width: 30px;
+      height: 30px;
+      margin: auto;
+      border-top: 4px solid var(--color-black);
+      border-left: 4px solid var(--color-black);
+      animation: bounce 2s ease-in-out infinite;
+    }
+  }
+</style>

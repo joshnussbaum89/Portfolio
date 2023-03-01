@@ -1,0 +1,42 @@
+<div id="desktop-nav" class="desktop-nav">
+  <ul>
+    <li><a href="/#services">Services</a></li>
+    <li><a href="/#work">Work</a></li>
+    <li><a href="/#contact">Contact</a></li>
+  </ul>
+</div>
+
+<style>
+  .desktop-nav {
+    display: none;
+  }
+
+  @media (min-width: 768px) {
+    .desktop-nav {
+      display: block;
+    }
+  }
+
+  @media (min-width: 768px) {
+    .desktop-nav ul {
+      display: flex;
+      gap: 2rem;
+    }
+  }
+
+  @media (min-width: 768px) {
+    .desktop-nav li {
+      font-size: var(--size-medium);
+    }
+  }
+
+  @media (min-width: 768px) {
+    .desktop-nav li a {
+      transition: var(--transition-normal);
+    }
+
+    .desktop-nav li a:hover {
+      opacity: var(--hover-opacity-link);
+    }
+  }
+</style>
