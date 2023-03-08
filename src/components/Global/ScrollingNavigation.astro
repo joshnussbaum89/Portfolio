@@ -68,9 +68,9 @@
   }
 
   function handleActiveNavigationDotsOnScroll() {
-    const services = document.getElementById('services')
-    const work = document.getElementById('work')
-    const contact = document.getElementById('contact')
+    const services = document.getElementById('services') as HTMLElement
+    const work = document.getElementById('work') as HTMLElement
+    const contact = document.getElementById('contact') as HTMLElement
 
     // Get the top position of each section
     const servicesTop = services.getBoundingClientRect().top

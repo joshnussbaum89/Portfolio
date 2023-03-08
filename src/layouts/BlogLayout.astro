@@ -1,0 +1,112 @@
+---
+import Layout from './Layout.astro'
+
+const { frontmatter } = Astro.props
+---
+
+<Layout
+  title={`Josh Nussbaum | ${frontmatter.title}`}
+  description={frontmatter.description}
+  url={`https://joshnussbaum.io${frontmatter.url}`}
+>
+  <div id="blog-container">
+    <slot />
+  </div>
+</Layout>
+
+<style is:inline>
+  #blog-container {
+    width: 100%;
+    max-width: 1100px;
+    margin: 0 auto 4rem;
+    padding: 1rem;
+    text-align: left;
+  }
+
+  @media (min-width: 768px) {
+    #blog-container {
+      padding: 0 2rem 2rem;
+    }
+  }
+
+  #blog-container h1 {
+    margin-bottom: 3rem;
+    font-size: var(--size-large);
+    text-align: center;
+  }
+
+  @media (min-width: 768px) {
+    #blog-container h1 {
+      font-size: var(--size-extra-large);
+    }
+  }
+
+  #blog-container h2 {
+    font-size: var(--size-medium);
+  }
+
+  @media (min-width: 768px) {
+    #blog-container h2 {
+      font-size: var(--size-large);
+    }
+  }
+
+  #blog-container h2,
+  #blog-container h3 {
+    margin: 1rem 0;
+  }
+
+  #blog-container p {
+    margin: 0 0 1rem;
+  }
+
+  #blog-container ul,
+  #blog-container ol {
+    margin: 0 0 2rem;
+  }
+
+  #blog-container ul {
+    padding-inline-start: 40px;
+  }
+
+  #blog-container li {
+    margin-bottom: 1rem;
+  }
+
+  #blog-container ul li {
+    list-style-type: disc;
+  }
+
+  #blog-container ol li {
+    list-style-type: decimal;
+  }
+
+  #blog-container p,
+  #blog-container li {
+    font-size: var(--size-extra-small);
+  }
+
+  @media (min-width: 768px) {
+    #blog-container p,
+    #blog-container li {
+      font-size: var(--size-small);
+    }
+  }
+
+  #blog-container img,
+  #blog-container pre {
+    width: 100%;
+    margin-bottom: 3rem;
+    border-radius: 5px;
+  }
+
+  #blog-container pre {
+    padding: 1rem;
+  }
+
+  @media (min-width: 768px) {
+    #blog-container pre {
+      padding: 2rem;
+    }
+  }
+</style>

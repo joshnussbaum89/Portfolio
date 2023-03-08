@@ -9,6 +9,7 @@
       <li><a href="/#services">Services</a></li>
       <li><a href="/#work">Work</a></li>
       <li><a href="/#contact">Contact</a></li>
+      <!-- <li><a href="/blog">Blog</a></li> -->
     </ul>
   </div>
 </div>
@@ -84,6 +85,7 @@
     height: 100vh;
     padding-top: 170px;
     opacity: 0;
+    z-index: -1;
     visibility: hidden;
     background-color: var(--color-white-transparent);
     -webkit-backdrop-filter: saturate(180%) blur(5px);
@@ -107,8 +109,8 @@
 </style>
 
 <script>
-  const body = document.querySelector('body')
-  const hamburger = document.getElementById('hamburger')
+  const body = document.querySelector('body') as HTMLBodyElement
+  const hamburger = document.getElementById('hamburger') as HTMLDivElement
   const mobileNavItems = document.querySelectorAll('.mobile-nav-overlay li')
   let overlayDisplayed = false
 

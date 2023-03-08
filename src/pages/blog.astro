@@ -1,0 +1,148 @@
+---
+import BlogCard from '../components/Global/BlogCard.astro'
+import Layout from '../layouts/Layout.astro'
+
+const allPosts = await Astro.glob('./blog/*.md')
+const sortedPosts = allPosts.sort((a, b) => b.frontmatter.id - a.frontmatter.id)
+const newestPost = sortedPosts.at(0)!.frontmatter
+const recentPosts = sortedPosts.slice(1, allPosts.length)
+
+function createEllipsisText(text: string, maxLength: number) {
+  const subText = text.substring(0, maxLength)
+  const lastChar = subText[maxLength - 1]
+  return lastChar !== ' '
+    ? `${subText}...`
+    : `${subText.substring(0, maxLength - 1)}...`
+}
+
+const truncatedDescriptionText = createEllipsisText(newestPost.description, 200)
+---
+
+<Layout
+  title="Josh Nussbaum | Blog"
+  description="List all blogs here"
+  url="https://joshnussbaum.io/blog"
+>
+  <section id="blog-container">
+    <h1>My Brain</h1>
+    <div class="newest-post-container">
+      <a href={newestPost.url}>
+        <img src={newestPost.image.url} alt={newestPost.image.alt} />
+      </a>
+      <div class="newest-post-info">
+        <p>{newestPost.date}</p>
+        <h2><a href={newestPost.url}>{newestPost.title}</a></h2>
+        <p>{truncatedDescriptionText}</p>
+      </div>
+    </div>
+    <div class="recent-posts-container">
+      {
+        recentPosts.map((post) => (
+          <BlogCard
+            title={post.frontmatter.title}
+            date={post.frontmatter.date}
+            url={post.url}
+            image={post.frontmatter.image.url}
+            altText={post.frontmatter.image.alt}
+          />
+        ))
+      }
+    </div>
+  </section>
+</Layout>
+
+<style>
+  #blog-container {
+    width: 100%;
+    max-width: 1100px;
+    margin: 0 auto 4rem;
+    padding: 1rem;
+  }
+
+  @media (min-width: 768px) {
+    #blog-container {
+      padding: 0 2rem 2rem;
+    }
+  }
+
+  #blog-container h1 {
+    margin-bottom: 2.5rem;
+    font-size: var(--size-large);
+    text-align: center;
+  }
+
+  @media (min-width: 768px) {
+    #blog-container h1 {
+      font-size: var(--size-extra-large);
+    }
+  }
+
+  .newest-post-container {
+    width: 100%;
+    max-width: 1100px;
+    display: grid;
+    gap: 1rem;
+    margin: 0 auto 2.5rem;
+    padding-bottom: 2.5rem;
+    border-bottom: 1px solid var(--color-grey-text);
+  }
+
+  @media (min-width: 1024px) {
+    .newest-post-container {
+      grid-template-columns: 1fr 350px;
+      gap: 2rem;
+    }
+  }
+
+  .newest-post-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1rem;
+    text-align: center;
+  }
+
+  @media (min-width: 1024px) {
+    .newest-post-info {
+      text-align: left;
+    }
+  }
+
+  .newest-post-info p:first-of-type {
+    font-size: 0.8rem;
+  }
+
+  .newest-post-info h2 {
+    font-size: var(--size-small);
+    text-transform: uppercase;
+  }
+
+  @media (min-width: 768px) {
+    .newest-post-info h2 {
+      font-size: var(--size-medium);
+    }
+  }
+
+  .newest-post-container p {
+    color: var(--color-grey-text);
+  }
+
+  .newest-post-container img {
+    width: 100%;
+    height: 100%;
+    border-radius: 5px;
+  }
+
+  .recent-posts-container {
+    display: grid;
+    grid-gap: 2rem;
+    width: 100%;
+    max-width: 1100px;
+  }
+
+  @media (min-width: 768px) {
+    .recent-posts-container {
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    }
+  }
+</style>
