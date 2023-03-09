@@ -4,7 +4,6 @@ import Navigation from '../components/Global/Navigation.astro'
 import Footer from '../components/Global/Footer.astro'
 
 // Images
-import favicon from '/favicon.png'
 import headshot from '/headshot-ai.webp'
 
 export interface Props {
@@ -37,7 +36,10 @@ const { title, description, url } = Astro.props
       href="https://fonts.googleapis.com/css2?family=Marcellus&family=Outfit&display=swap"
       rel="stylesheet"
     />
-    <link rel="icon" href={favicon} type="image/png" />
+    <link rel="icon" href="/favicon.ico" sizes="any" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
     <title>{title}</title>
   </head>
   <body>
