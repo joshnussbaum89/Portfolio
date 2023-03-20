@@ -1,15 +1,13 @@
 {
-	"name": "portfolio-astro",
-	"type": "module",
-	"version": "0.0.1",
-	"scripts": {
-		"dev": "astro dev",
-		"start": "astro dev",
-		"build": "astro build",
-		"preview": "astro preview",
-		"astro": "astro"
-	},
-	"dependencies": {
-		"astro": "^2.1.2"
-	}
+  "name": "portfolio-astro",
+  "type": "module",
+  "version": "0.0.1",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "start": "astro preview"
+  },
+  "dependencies": {
+    "astro": "^2.1.2"
+  }
 }
