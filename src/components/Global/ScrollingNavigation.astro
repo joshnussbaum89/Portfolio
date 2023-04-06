@@ -1,9 +1,10 @@
 <div class="scrolling-navigation-container">
   <div id="scrolling-navigation" class="scrolling-navigation">
-    <a class="dot active" href="#" data-index="0"></a>
-    <a class="dot" href="#services" data-index="1"></a>
-    <a class="dot" href="#work" data-index="2"></a>
-    <a class="dot" href="#contact" data-index="3"></a>
+    <a class="dot active" href="/#" data-index="0"></a>
+    <a class="dot" href="/#about" data-index="1"></a>
+    <a class="dot" href="/#services" data-index="2"></a>
+    <a class="dot" href="/#work" data-index="3"></a>
+    <a class="dot" href="/#contact" data-index="4"></a>
   </div>
 </div>
 
@@ -68,19 +69,22 @@
   }
 
   function handleActiveNavigationDotsOnScroll() {
+    const about = document.getElementById('about') as HTMLElement
     const services = document.getElementById('services') as HTMLElement
     const work = document.getElementById('work') as HTMLElement
     const contact = document.getElementById('contact') as HTMLElement
 
     // Get the top position of each section
+    const aboutTop = about.getBoundingClientRect().top
     const servicesTop = services.getBoundingClientRect().top
     const workTop = work.getBoundingClientRect().top
     const contactTop = contact.getBoundingClientRect().top
 
-    if (servicesTop > 0) activeDotIndex = 0 // Home
-    if (servicesTop < 100 && workTop > 0) activeDotIndex = 1 // Services
-    if (workTop < 100 && contactTop > 0) activeDotIndex = 2 // Work
-    if (contactTop < 100) activeDotIndex = 3 // Contact
+    if (aboutTop > 0) activeDotIndex = 0 // Home
+    if (aboutTop < 100 && servicesTop > 0) activeDotIndex = 1 // About
+    if (servicesTop < 100 && workTop > 0) activeDotIndex = 2 // Services
+    if (workTop < 100 && contactTop > 0) activeDotIndex = 3 // Work
+    if (contactTop < 100) activeDotIndex = 4 // Contact
 
     handleActiveNavigationDotStyling(
       document.querySelector(`.dot[data-index="${activeDotIndex}"]`)

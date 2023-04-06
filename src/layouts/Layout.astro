@@ -58,6 +58,7 @@ const { title, description, url } = Astro.props
     --size-medium: 1.5rem;
     --size-large: 2.25rem;
     --size-extra-large: 3rem;
+    --size-mega-large: 4rem;
 
     --color-black: #1e1e1e;
     --color-white: #fcfcfc;
@@ -163,11 +164,13 @@ const { title, description, url } = Astro.props
   }
 
   #header,
+  #about,
   #services,
   #work {
     margin-bottom: 8rem;
   }
 
+  #about,
   #services,
   #work,
   #contact {
@@ -175,6 +178,7 @@ const { title, description, url } = Astro.props
   }
 
   @media (min-width: 768px) {
+    #about,
     #services,
     #work,
     #contact {
@@ -216,6 +220,18 @@ const { title, description, url } = Astro.props
     }
     60% {
       transform: translateY(-0.25rem) rotate(225deg);
+    }
+  }
+
+  @keyframes circle {
+    0% {
+      box-shadow: none;
+    }
+    50% {
+      box-shadow: 0 0 10px var(--color-purple);
+    }
+    100% {
+      box-shadow: none;
     }
   }
 </style>

@@ -1,14 +1,14 @@
 ---
 export interface Props {
   text: string
-  href: string
+  url: string
   class?: string
 }
 
-const { text, href, class: className } = Astro.props
+const { text, url, class: className } = Astro.props
 ---
 
-<a class={`${className} josh-cta`} href={href}>{text}</a>
+<a class={`${className} josh-cta`} href={url}>{text}</a>
 
 <style>
   a {
