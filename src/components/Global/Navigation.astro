@@ -19,6 +19,12 @@ import MobileNavigation from './MobileNavigation.astro'
     padding: 1rem;
   }
 
+  @media(max-height: 700px) {
+    nav {
+      margin-bottom: 1rem;
+    }
+  }
+
   @media (min-width: 768px) {
     nav {
       margin-bottom: 6rem;
