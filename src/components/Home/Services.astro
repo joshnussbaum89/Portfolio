@@ -4,6 +4,27 @@ import Card from '../Global/Card.astro'
 import Circle from '../Global/Circle.astro'
 import Arrow from '../Global/Arrow.astro'
 import BlurryCircles from '../Global/BlurryCircles.astro'
+
+const servicesData = [
+  {
+    id: '01',
+    title: 'Custom Design',
+    description:
+      'that engages your audience and brings your creative vision to life.',
+  },
+  {
+    id: '02',
+    title: 'Modern Practices',
+    description:
+      'such as clean code, fast page loads, and great SEO by default.',
+  },
+  {
+    id: '03',
+    title: 'Limitless Possibilities',
+    description:
+      'like feature add-ons, upgrades, design and content updates, and comprehensive maintainance plans.',
+  },
+]
 ---
 
 <section id="services" class="services">
@@ -19,24 +40,17 @@ import BlurryCircles from '../Global/BlurryCircles.astro'
   </div>
   <div class="col-2">
     <BlurryCircles />
-    <Card class="card">
-      <span>01</span>
-      <h3>Custom Design</h3>
-      <p>that engages your audience and brings your creative vision to life.</p>
-    </Card>
-    <Card class="card">
-      <span>02</span>
-      <h3>Modern Practices</h3>
-      <p>such as clean code, fast page loads, and great SEO by default.</p>
-    </Card>
-    <Card class="card">
-      <span>03</span>
-      <h3>Limitless Possibilities</h3>
-      <p>
-        like feature add-ons, upgrades, design and content upgrades, and
-        comprehensive maintainance plans.
-      </p>
-    </Card>
+    {
+      servicesData.map((item) => {
+        return (
+          <Card class="card">
+            <span>{item.id}</span>
+            <h3>{item.title}</h3>
+            <p>{item.description}</p>
+          </Card>
+        )
+      })
+    }
   </div>
   <div class="circle mobile">
     <a href="/#contact">

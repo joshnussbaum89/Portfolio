@@ -5,7 +5,7 @@ import SectionHeader from '../Global/SectionHeader.astro'
 <section id="contact" class="contact">
   <div class="contact-container">
     <SectionHeader text="Contact Me" />
-    <p>Have something you are looking to build? Let's make it!</p>
+    <p>Have something you are looking to build? Let's make it ✨</p>
     <form
       method="POST"
       class="form"
@@ -43,13 +43,6 @@ import SectionHeader from '../Global/SectionHeader.astro'
     margin: auto;
   }
 
-  @media (min-width: 768px) {
-    .contact-container h2,
-    .contact-container > p {
-      text-align: center;
-    }
-  }
-
   .contact-container h2 {
     margin-bottom: 1rem;
   }
@@ -57,15 +50,14 @@ import SectionHeader from '../Global/SectionHeader.astro'
   .contact-container > p {
     display: block;
     max-width: 410px;
-    margin-bottom: 2rem;
+    margin: 0 auto 2rem;
     font-size: var(--size-small);
+    text-align: center;
   }
 
   @media (min-width: 768px) {
     .contact-container > p {
       max-width: 480px;
-      margin-left: auto;
-      margin-right: auto;
       font-size: var(--size-medium);
     }
   }
