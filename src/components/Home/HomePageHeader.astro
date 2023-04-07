@@ -13,7 +13,7 @@ import SectionHeader from '../Global/SectionHeader.astro'
   <section class="header-info">
     <img src={headshot} width="250" height="250" alt="Josh Nussbaum headshot" />
     <div class="info">
-      <SectionHeader text="Hi, I'm Josh" />
+      <h1>Hi, I'm Josh</h1>
       <p>
         I'm a web developer and musician currently making stuff in Madison, WI.
       </p>
@@ -46,7 +46,7 @@ import SectionHeader from '../Global/SectionHeader.astro'
       flex-direction: row-reverse;
       justify-content: center;
       gap: 2vw;
-      margin-bottom: 10rem;
+      margin-bottom: 8rem;
       padding: 2rem;
       text-align: left;
     }
@@ -61,13 +61,13 @@ import SectionHeader from '../Global/SectionHeader.astro'
     border-radius: 50%;
   }
 
-  .info h2 {
+  .info h1 {
     margin-bottom: 1rem;
     font-size: var(--size-large);
   }
 
   @media (min-width: 768px) {
-    .info h2 {
+    .info h1 {
       font-size: var(--size-extra-large);
       text-align: left;
     }
