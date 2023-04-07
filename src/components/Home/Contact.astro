@@ -13,9 +13,9 @@ import SectionHeader from '../Global/SectionHeader.astro'
       action="/success.html"
       data-netlify="true"
     >
-      <label>Name: <span>*</span></label>
+      <label for="name">Name: <span>*</span></label>
       <input id="name" type="text" name="name" placeholder="Name" required />
-      <label>Email: <span>*</span></label>
+      <label for="email">Email: <span>*</span></label>
       <input
         id="email"
         type="email"
@@ -23,7 +23,7 @@ import SectionHeader from '../Global/SectionHeader.astro'
         placeholder="Email"
         required
       />
-      <label>Message: <span>*</span></label>
+      <label for="message">Message: <span>*</span></label>
       <textarea
         id="message"
         name="message"

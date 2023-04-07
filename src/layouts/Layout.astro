@@ -134,9 +134,9 @@ const { title, description, url } = Astro.props
   h2,
   h3,
   h4 {
-    font-family: 'Marcellus', sans-serif;
     margin: 0;
-    font-weight: var(--weight-extra-bold);
+    font-family: 'Marcellus', sans-serif;
+    font-weight: 500;
   }
 
   a {
@@ -166,24 +166,26 @@ const { title, description, url } = Astro.props
   #header,
   #about,
   #services,
-  #work {
-    margin-bottom: 8rem;
-  }
-
-  #about,
-  #services,
   #work,
   #contact {
     padding: 1rem;
   }
 
   @media (min-width: 768px) {
+    #header,
     #about,
     #services,
     #work,
     #contact {
       padding: 2rem;
     }
+  }
+
+  #header,
+  #about,
+  #services,
+  #work {
+    margin-bottom: 8rem;
   }
 
   .josh-cta {
