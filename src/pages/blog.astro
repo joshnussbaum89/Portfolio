@@ -10,9 +10,7 @@ const recentPosts = sortedPosts.slice(1, allPosts.length)
 function createEllipsisText(text: string, maxLength: number) {
   const subText = text.substring(0, maxLength)
   const lastChar = subText[maxLength - 1]
-  return lastChar !== ' '
-    ? `${subText}...`
-    : `${subText.substring(0, maxLength - 1)}...`
+  return lastChar !== ' ' ? `${subText}...` : `${subText.substring(0, maxLength - 1)}...`
 }
 
 const truncatedDescriptionText = createEllipsisText(newestPost.description, 200)
@@ -21,7 +19,7 @@ const truncatedDescriptionText = createEllipsisText(newestPost.description, 200)
 <Layout
   title="Josh Nussbaum | Blog"
   description="List all blogs here"
-  url="https://joshnussbaum.io/blog"
+  url="https://joshnussbaumdev.com/blog"
 >
   <section id="blog-container">
     <h1>My Brain</h1>
