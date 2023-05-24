@@ -9,14 +9,12 @@ const servicesData = [
   {
     id: '01',
     title: 'Custom Design',
-    description:
-      'that engages your audience and brings your creative vision to life.',
+    description: 'that engages your audience and brings your creative vision to life.',
   },
   {
     id: '02',
     title: 'Modern Practices',
-    description:
-      'such as clean code, fast page loads, and great SEO by default.',
+    description: 'such as clean code, fast page loads, and great SEO by default.',
   },
   {
     id: '03',
@@ -27,7 +25,7 @@ const servicesData = [
 ]
 ---
 
-<section id="services" class="services">
+<section id="services" class="services" data-aos="fade">
   <div class="col-1">
     <SectionHeader text="In Every Website I Make" />
     <div class="circle desktop">
@@ -43,7 +41,7 @@ const servicesData = [
     {
       servicesData.map((item) => {
         return (
-          <Card class="card">
+          <Card class="card" aosDelay={`${item.id.slice(1)}00`}>
             <span>{item.id}</span>
             <h3>{item.title}</h3>
             <p>{item.description}</p>

@@ -4,7 +4,7 @@ import DesktopNavigation from './DesktopNavigation.astro'
 import MobileNavigation from './MobileNavigation.astro'
 ---
 
-<nav>
+<nav data-aos="fade">
   <Logo />
   <DesktopNavigation />
   <MobileNavigation />
@@ -19,7 +19,7 @@ import MobileNavigation from './MobileNavigation.astro'
     padding: 1rem;
   }
 
-  @media(max-height: 700px) {
+  @media (max-height: 700px) {
     nav {
       margin-bottom: 1rem;
     }

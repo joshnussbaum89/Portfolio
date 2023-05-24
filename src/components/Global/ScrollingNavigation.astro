@@ -1,4 +1,4 @@
-<div class="scrolling-navigation-container">
+<div class="scrolling-navigation-container" data-aos="fade">
   <div id="scrolling-navigation" class="scrolling-navigation">
     <a class="dot active" href="/#" data-index="0"></a>
     <a class="dot" href="/#about" data-index="1"></a>
@@ -86,13 +86,9 @@
     if (workTop < 100 && contactTop > 0) activeDotIndex = 3 // Work
     if (contactTop < 100) activeDotIndex = 4 // Contact
 
-    handleActiveNavigationDotStyling(
-      document.querySelector(`.dot[data-index="${activeDotIndex}"]`)
-    )
+    handleActiveNavigationDotStyling(document.querySelector(`.dot[data-index="${activeDotIndex}"]`))
   }
 
   document.addEventListener('scroll', handleActiveNavigationDotsOnScroll)
-  navigationDots.forEach((dot) =>
-    dot.addEventListener('click', handleActiveNavigationDotStyling)
-  )
+  navigationDots.forEach((dot) => dot.addEventListener('click', handleActiveNavigationDotStyling))
 </script>

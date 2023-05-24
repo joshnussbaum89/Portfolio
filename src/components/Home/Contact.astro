@@ -2,27 +2,25 @@
 import SectionHeader from '../Global/SectionHeader.astro'
 ---
 
-<section id="contact" class="contact">
+<section id="contact" class="contact" data-aos="fade">
   <div class="contact-container">
     <SectionHeader text="Contact Me" />
-    <p>Have something you are looking to build? Let's make it ✨</p>
+    <p data-aos="fade" data-aos-delay="200">
+      Have something you are looking to build? Let's make it ✨
+    </p>
     <form
       method="POST"
       class="form"
       name="contactForm"
       action="/success.html"
       data-netlify="true"
+      data-aos="fade"
+      data-aos-delay="300"
     >
       <label for="name">Name: <span>*</span></label>
       <input id="name" type="text" name="name" placeholder="Name" required />
       <label for="email">Email: <span>*</span></label>
-      <input
-        id="email"
-        type="email"
-        name="email"
-        placeholder="Email"
-        required
-      />
+      <input id="email" type="email" name="email" placeholder="Email" required />
       <label for="message">Message: <span>*</span></label>
       <textarea
         id="message"

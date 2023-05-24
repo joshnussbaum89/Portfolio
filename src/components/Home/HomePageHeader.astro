@@ -8,16 +8,23 @@ import JoshCta from '../Global/JoshCta.astro'
 import headshot from '/headshot-ai.webp'
 ---
 
-<header id="header">
+<header id="header" data-aos="fade">
   <section class="header-info">
-    <img src={headshot} width="250" height="250" alt="Josh Nussbaum headshot" />
+    <img
+      src={headshot}
+      width="250"
+      height="250"
+      alt="Josh Nussbaum headshot"
+      data-aos="fade"
+      data-aos-delay="100"
+    />
     <div class="info">
-      <h1>Hi, I'm Josh</h1>
-      <p>
+      <h1 data-aos="fade" data-aos-delay="200">Hi, I'm Josh</h1>
+      <p data-aos="fade" data-aos-delay="300">
         I'm a web developer and musician currently making stuff in Madison, WI.
       </p>
-      <JoshCta text="Contact me" url="/#contact" />
-      <SocialIcons />
+      <JoshCta text="Contact me" url="/#contact" aosDelay="400" />
+      <SocialIcons aosDelay="500" />
     </div>
   </section>
   <BouncingArrow />

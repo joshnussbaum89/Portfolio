@@ -2,13 +2,14 @@
 export interface Props {
   text: string
   url: string
+  aosDelay?: string
   class?: string
 }
 
-const { text, url, class: className } = Astro.props
+const { text, url, aosDelay, class: className } = Astro.props
 ---
 
-<a class={`${className} josh-cta`} href={url}>{text}</a>
+<a class={`${className} josh-cta`} href={url} data-aos="fade" data-aos-delay={aosDelay}>{text}</a>
 
 <style>
   a {
