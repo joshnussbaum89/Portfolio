@@ -53,10 +53,10 @@ const { title, description, url } = Astro.props
 
 <style is:global>
   :root {
-    --size-extra-small: 1rem;
-    --size-small: 1.25rem;
-    --size-medium: 1.5rem;
-    --size-large: 2.25rem;
+    --size-extra-small: 1rem; /* line-height: 1.5rem */
+    --size-small: 1.25rem; /* line-height: 1.75rem */
+    --size-medium: 1.5rem; /* line-height: 2rem */
+    --size-large: 2.25rem; /* line-height: 2.5rem */
     --size-extra-large: 3rem;
     --size-mega-large: 4rem;
 
@@ -167,6 +167,7 @@ const { title, description, url } = Astro.props
   #about,
   #services,
   #work,
+  #faqs,
   #contact {
     padding: 1rem;
   }
@@ -176,6 +177,7 @@ const { title, description, url } = Astro.props
     #about,
     #services,
     #work,
+    #faqs,
     #contact {
       padding: 2rem;
     }
@@ -184,6 +186,7 @@ const { title, description, url } = Astro.props
   #header,
   #about,
   #services,
+  #faqs,
   #work {
     margin-bottom: 8rem;
   }

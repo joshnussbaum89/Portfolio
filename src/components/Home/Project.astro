@@ -9,13 +9,12 @@ export interface Props {
     liveSite: string
     github: string
   }
-  aosDelay?: string
 }
 
-const { project, aosDelay } = Astro.props
+const { project } = Astro.props
 ---
 
-<article class="project" data-aos="fade" data-aos-delay={aosDelay}>
+<article class="project" data-aos="fade">
   <img src={project.imageSrc} width="3008" height="1720" alt={project.alt} loading="lazy" />
   <div class="project-description">
     <h3>{project.title}</h3>

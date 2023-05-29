@@ -42,11 +42,7 @@ const projectData = [
 <section id="work" data-aos="fade">
   <SectionHeader text="Recent Work" />
   <div class="work-content">
-    {
-      projectData.map((project, index) => (
-        <Project project={project} aosDelay={`${(index + 1) * 100}`} />
-      ))
-    }
+    {projectData.map((project) => <Project project={project} />)}
   </div>
 </section>
 

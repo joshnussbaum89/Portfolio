@@ -1,0 +1,168 @@
+---
+import SectionHeader from '../Global/SectionHeader.astro'
+---
+
+<section id="faqs">
+  <SectionHeader text="FAQs" />
+  <details data-aos="fade">
+    <summary>What kind of websites do you build?</summary>
+    <p>
+      Great question! I generally build brochure, blog, and e-commerce websites. A brochure website
+      is like an online business card, showcasing your work. A blog is perfect for sharing your
+      thoughts and engaging with your audience. An e-commerce site allows you to sell products or
+      services directly from your website.
+    </p>
+  </details>
+  <details data-aos="fade">
+    <summary>How long does it take to build a website?</summary>
+    <p>
+      The time to build a website varies based on its complexity. A simple brochure website can be
+      completed in a few weeks, while a more intricate e-commerce site might take a couple of
+      months. Rest assured, I'll work closely with you to set realistic timelines.
+    </p>
+  </details>
+  <details data-aos="fade">
+    <summary>Can you help me choose a domain name for my website?</summary>
+    <p>
+      Absolutely! Domain names are a whole thing and are especially important when it comes to
+      search engine optimization (SEO). I can assist you in finding the perfect domain name that
+      aligns with your brand and captures your unique identity. Informed by your preferences, I'll
+      help you secure a memorable web address.
+    </p>
+  </details>
+  <details data-aos="fade">
+    <summary
+      >Do I need any pre-existing technical knowledge to maintain and update my website?</summary
+    >
+    <p>
+      Nope! I believe in empowering my clients with the knowledge necessary to be successful website
+      owners. All updates are handled for you at an affordable hourly rate, or I can set up your own
+      intuitive content management system (CMS) that allows you to update your website easily, even
+      if you have limited technical experience. Unlimited customer support is provided at no extra
+      cost.
+    </p>
+  </details>
+  <details data-aos="fade">
+    <summary>I know I need a website, but what even goes on a website?</summary>
+    <p>
+      Knowing what content to include on a website can be overwhelming. In addition to building and
+      hosting your website, I am here to help with content planning, SEO and marketing goals, and
+      all other project management-related steps.
+    </p>
+  </details>
+  <details data-aos="fade">
+    <summary
+      >What happens if I want to add new features or pages to my website in the future?</summary
+    >
+    <p>
+      I understand that your website may evolve over time and am here to support you even after
+      initial website development. Reach out anytime to discuss your needs and I will provide you
+      with a tailored solution to accommodate any updates or additions.
+    </p>
+  </details>
+  <details data-aos="fade">
+    <summary>Can you optimize my website for search engines (SEO)?</summary>
+    <p>
+      Absolutely! By default, every website is built while paying close attention to things like
+      search engine optimization (SEO), accessibility (A11y), and performance. I'll optimize your
+      site's structure, meta tags, and content to improve its visibility in search engine results
+      and help you attract more organic traffic.
+    </p>
+  </details>
+  <details data-aos="fade">
+    <summary>Will my website be mobile-friendly?</summary>
+    <p>
+      Yes! Mobile accessibility has never been more important. All of the websites I create are
+      fully responsive, meaning they will look and function great on all devices, from smartphones
+      to tablets and desktops.
+    </p>
+  </details>
+  <details data-aos="fade">
+    <summary>Can you provide hosting and maintenance for my website?</summary>
+    <p>
+      Absolutely! I offer a hosting package at an affordable monthly cost that ensures your website
+      remains secure, loads quickly, and is regularly backed up. I also provide ongoing maintenance
+      to keep your website up to date. However, some folks like to handle these things on their own,
+      and that is totally fine! In these cases, I can help you get set up with recommended hosting
+      and remain available for updates at my normal hourly rate.
+    </p>
+  </details>
+  <details data-aos="fade">
+    <summary>How much does a website cost?</summary>
+    <p>
+      The cost of a website depends on various factors, such as its complexity, features, and the
+      amount of customization required. See <a href="/service-offerings-and-rates.pdf" download
+        >here</a
+      > for a free download of all available pricing options. Feel free to reach out below with any other
+      questions!
+    </p>
+  </details>
+</section>
+
+<style>
+  details {
+    max-width: 800px;
+    margin: 2rem auto;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid var(--color-grey);
+  }
+
+  details summary {
+    font-size: var(--size-small);
+    list-style: none;
+    cursor: pointer;
+  }
+
+  @media (min-width: 768px) {
+    details summary {
+      font-size: var(--size-medium);
+    }
+  }
+
+  details summary::before {
+    content: '✏️';
+    margin-right: 0.5rem;
+  }
+
+  details::marker {
+    background: var(--color-black);
+  }
+
+  details p {
+    padding: 1rem 0 0;
+    font-size: var(--size-extra-small);
+  }
+
+  @media (min-width: 768px) {
+    details p {
+      font-size: var(--size-small);
+    }
+  }
+
+  details a {
+    text-decoration: underline;
+    color: var(--color-purple);
+    transition: var(--transition-normal);
+  }
+
+  @media (min-width: 768px) {
+    details a:hover {
+      color: var(--color-black);
+    }
+  }
+
+  details[open] {
+    padding: 2rem;
+    border: 2px solid var(--color-black);
+    border-radius: 5px;
+    box-shadow: var(--box-shadow-light);
+  }
+
+  details[open] summary {
+    font-weight: bold;
+  }
+
+  details[open] summary::before {
+    content: '✅';
+  }
+</style>
