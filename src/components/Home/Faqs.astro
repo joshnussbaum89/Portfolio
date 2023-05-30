@@ -14,7 +14,7 @@ import SectionHeader from '../Global/SectionHeader.astro'
     </p>
   </details>
   <details data-aos="fade">
-    <summary>How long does it take to build a website?</summary>
+    <summary>How long will it take to build my website?</summary>
     <p>
       The time to build a website varies based on its complexity. A simple brochure website can be
       completed in a few weeks, while a more intricate e-commerce site might take a couple of
@@ -24,10 +24,10 @@ import SectionHeader from '../Global/SectionHeader.astro'
   <details data-aos="fade">
     <summary>Can you help me choose a domain name for my website?</summary>
     <p>
-      Absolutely! Domain names are a whole thing and are especially important when it comes to
-      search engine optimization (SEO). I can assist you in finding the perfect domain name that
-      aligns with your brand and captures your unique identity. Informed by your preferences, I'll
-      help you secure a memorable web address.
+      Yep! Domain names are a whole thing and are especially important when it comes to search
+      engine optimization (SEO). I can assist you in finding the perfect domain name that aligns
+      with your brand and captures your unique identity. Informed by your preferences, I'll help you
+      secure a memorable web address.
     </p>
   </details>
   <details data-aos="fade">
@@ -55,15 +55,15 @@ import SectionHeader from '../Global/SectionHeader.astro'
       >What happens if I want to add new features or pages to my website in the future?</summary
     >
     <p>
-      I understand that your website may evolve over time and am here to support you even after
-      initial website development. Reach out anytime to discuss your needs and I will provide you
-      with a tailored solution to accommodate any updates or additions.
+      Websites are alive and ever-evolving and I am here to support you even after initial website
+      development. Reach out anytime to discuss your needs and I will provide you with a tailored
+      solution to accommodate any updates or additions.
     </p>
   </details>
   <details data-aos="fade">
     <summary>Can you optimize my website for search engines (SEO)?</summary>
     <p>
-      Absolutely! By default, every website is built while paying close attention to things like
+      For sure! By default, every website is built while paying close attention to things like
       search engine optimization (SEO), accessibility (A11y), and performance. I'll optimize your
       site's structure, meta tags, and content to improve its visibility in search engine results
       and help you attract more organic traffic.
@@ -88,12 +88,27 @@ import SectionHeader from '../Global/SectionHeader.astro'
     </p>
   </details>
   <details data-aos="fade">
-    <summary>How much does a website cost?</summary>
+    <summary
+      >Why work with a professional developer when I can use low-code website builders like Wix,
+      Webflow, or Squarespace?</summary
+    >
+    <p>
+      I love low-code tools, and sometimes use them myself! While builders like Wix, Webflow, or
+      Squarespace are user-friendly and provide many benefits, a professional developer offers
+      unique insight and technical expertise to help create custom functionalities and ensure
+      optimal performance and scalability. With a professional developer, you gain personal support,
+      technical expertise, and a carefully tailored website that reflects your brand and stands out
+      from the crowd. Overall, I prefer to build custom-coded websites but am happy to set you up
+      with a low-code option of your choice.
+    </p>
+  </details>
+  <details data-aos="fade">
+    <summary>How much will my website cost?</summary>
     <p>
       The cost of a website depends on various factors, such as its complexity, features, and the
-      amount of customization required. See <a href="/service-offerings-and-rates.pdf" download
+      amount of customization required. Click <a href="/service-offerings-and-rates.pdf" download
         >here</a
-      > for a free download of all available pricing options. Feel free to reach out below with any other
+      > to download of all available pricing options, and feel free to reach out below with any other
       questions!
     </p>
   </details>
@@ -107,29 +122,44 @@ import SectionHeader from '../Global/SectionHeader.astro'
     border-bottom: 1px solid var(--color-grey);
   }
 
-  details summary {
+  summary {
     font-size: var(--size-small);
     list-style: none;
     cursor: pointer;
   }
 
   @media (min-width: 768px) {
-    details summary {
+    summary {
       font-size: var(--size-medium);
     }
   }
 
-  details summary::before {
+  summary::-webkit-details-marker {
+    display: none;
+  }
+
+  summary::before {
     content: '✏️';
     margin-right: 0.5rem;
   }
 
-  details::marker {
-    background: var(--color-black);
+  details[open] {
+    padding: 2rem;
+    border: 2px solid var(--color-black);
+    border-radius: 5px;
+    box-shadow: var(--box-shadow-light);
+  }
+
+  details[open] summary {
+    font-weight: bold;
+    padding-bottom: 1rem;
+  }
+
+  details[open] summary::before {
+    content: '✅';
   }
 
   details p {
-    padding: 1rem 0 0;
     font-size: var(--size-extra-small);
   }
 
@@ -147,22 +177,7 @@ import SectionHeader from '../Global/SectionHeader.astro'
 
   @media (min-width: 768px) {
     details a:hover {
-      color: var(--color-black);
+      opacity: var(--hover-opacity-link);
     }
-  }
-
-  details[open] {
-    padding: 2rem;
-    border: 2px solid var(--color-black);
-    border-radius: 5px;
-    box-shadow: var(--box-shadow-light);
-  }
-
-  details[open] summary {
-    font-weight: bold;
-  }
-
-  details[open] summary::before {
-    content: '✅';
   }
 </style>
