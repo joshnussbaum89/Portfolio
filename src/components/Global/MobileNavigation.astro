@@ -92,20 +92,52 @@
     -webkit-backdrop-filter: saturate(180%) blur(5px);
     backdrop-filter: saturate(180%) blur(5px);
     box-shadow: var(--box-shadow-light);
-    transition: var(--transition-normal);
+    transition: opacity 0.3s ease-in-out, visibility 0s 0.3s, z-index 0s 0.3s;
     border-radius: 1rem;
   }
 
   .hamburger.active + .mobile-nav-overlay {
     opacity: 1;
     visibility: visible;
+    transition: opacity 0.3s ease-in-out;
     z-index: 2;
   }
 
-  .mobile-nav li {
+  .mobile-nav-overlay ul li {
+    opacity: 0;
+    transform: translateY(1rem);
+    transition: var(--transition-normal);
+  }
+
+  .mobile-nav-overlay ul li:nth-of-type(2) {
+    transition: var(--transition-normal) 0.1s;
+  }
+
+  .mobile-nav-overlay ul li:nth-of-type(3) {
+    transition: var(--transition-normal) 0.2s;
+  }
+
+  .mobile-nav-overlay ul li:nth-of-type(4) {
+    transition: var(--transition-normal) 0.3s;
+  }
+
+  .hamburger.active + .mobile-nav-overlay ul li {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .mobile-nav-overlay li {
     font-size: var(--size-extra-large);
     margin-bottom: 2rem;
     text-align: center;
+  }
+
+  .mobile-nav-overlay li a {
+    transition: var(--transition-normal);
+  }
+
+  .mobile-nav-overlay li a:hover {
+    color: var(--color-purple);
   }
 </style>
 

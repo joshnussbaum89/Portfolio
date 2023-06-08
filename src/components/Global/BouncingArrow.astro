@@ -1,4 +1,14 @@
-<div class="arrow"></div>
+---
+export interface Props {
+  scrollToLink: '#about' | '#services' | '#work' | '#faqs' | '#contact'
+}
+
+const { scrollToLink } = Astro.props
+---
+
+<a href={`${scrollToLink}`}>
+  <div class="arrow"></div>
+</a>
 
 <style>
   .arrow {
